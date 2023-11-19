@@ -1,0 +1,346 @@
+/* google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    min-height: 100vh;
+    background: #292b38;
+    overflow: hidden;
+}
+/*==========header css===========*/
+#Header{
+    position: relative;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 20px;
+
+}
+.nav_logo{
+    font-size: 25px;
+    font-weight: 500;
+    animation: slideRight 1s ease forwards;
+}
+.nav{
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+.nav,
+.nav_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 25px;
+}
+.nav_item a{
+    display: inline-block;
+    opacity: 0;
+    animation: slideBottom .5s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+    
+}
+
+.nav_logo,
+.btn,
+.nav_link{
+    color: #ffffff;
+}
+.active{
+    color: #16b9ef;
+}
+
+.nav_link:hover{
+    color: #16b9ef;
+    transition: 0.3s; 
+}
+
+#container{
+    max-width: 1100px;
+    width: 100%;
+    position:relative;
+    z-index: 100;
+    padding: 0 20px;
+    margin: 0 auto;
+    
+}
+#container .text_area{
+    float: left;
+    width: 50%;
+    margin-top: 100px;
+    
+}
+#container .text_area h2{
+    color: #ffffff;
+    font-weight: 500;
+    opacity: 0;
+    animation: slideLeft .7s ease forwards;
+    animation-delay: .3s;
+    
+}
+#container .text_area h2 span{
+    color: #16b9ef;
+    
+}
+.text_area .text{
+    position: relative;
+    color: #16b9ef;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.text_area .frist_text{
+    color: #ffffff;
+}
+.text_area .second_text::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:#292b38;
+    border-left:  2px solid #16b9ef;
+    animation: animate 4s steps(12) infinite;
+}
+#container .text_area p{
+    color: #ffffff;
+    margin: 10px 0;
+    opacity: 0;
+    animation: slideLeft .7s ease forwards;
+    animation-delay: .3s;
+}
+
+.social_link{
+    display: flex;
+    gap: 25px;
+    opacity: 0;
+    animation: rightSlide 1s ease forwards;
+    animation-delay: .6s;
+    margin: 10px 0px;
+}
+.social_link a{
+
+    color: #ffffff;
+    font-size: 20px;
+    background: #16b9ef;
+    padding:4px 10px;
+    margin: 10px 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px  #16b9ef;
+}
+
+.cv_button button{
+    border: 0 ;
+    background-color: #16b9ef;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px  #16b9ef;
+    opacity: 0;
+    animation: btnsldUp 1s ease forwards;
+    animation-delay: .5s;
+}
+.photo_area{
+    float: right;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.img_section{
+    margin-top: 100px;
+}
+.img_section img{
+    border-radius: 10px;
+    width: 300px;
+    opacity: 0;
+    animation: imgZoomIn 1s ease forwards,floatImg 4s ease-in-out infinite;
+    animation-delay: 1s,2s;
+    box-shadow: 0px 0px 20px #16b9ef;
+}
+
+/*====KEYFRAMES ANIMATION======*/
+
+
+/*======NAV KEYFRAMES ANIMATION====*/
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+@keyframes slideBottom {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
+/*========== TEXT KEYFRAMES ANIMATION==========*/
+
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left:0%;
+    }
+}
+
+@keyframes slideLeft {
+    0%{
+        transform: translatex(20%);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translatex(0);
+        opacity: 1;
+    }
+    
+}
+
+/*=======SOCIAL LINK ANIMATION======*/
+@keyframes rightSlide {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+/*----- Cv button nimation-----*/
+@keyframes btnsldUp {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
+/*=======IMG  ANIMATION======*/
+
+@keyframes imgZoomIn{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+}
+@keyframes floatImg {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-25px);
+    }
+    0%{
+        transform: translateY(0);
+    }
+    
+}
+
+@media (max-width:860px) {
+    .nav,
+    .nav_item{
+        column-gap: 15px;
+    }
+    .nav_logo{
+        font-size: 18px;
+    
+    }
+    .nav_item a{
+        font-size: 14px;
+    }
+    #container{
+        overflow: hidden;
+        padding-bottom: 100px;
+    }
+    #container .text_area{
+        margin-top: 50px;
+        width: 40%;
+        
+    }
+    #container .text_area h2{
+      font-size: 18px;   
+    }
+    .text_area .text{
+        font-size: 14px;
+        
+    }
+    #container .text_area p{
+      font-size: 14px;
+    }
+    .social_link{
+        gap: 15px;
+      
+    }
+    .social_link a{
+        font-size: 14px;
+        padding:5px 10px;
+       
+    }
+    .cv_button button{
+       
+        padding: 7px 14px;
+        font-size: 14px;
+        
+    }
+
+    .photo_area{
+        width: 40%;
+        align-items:center;
+        justify-content:center;
+        margin-right: 5px;
+    }
+    .img_section{
+        margin-top: 50px;
+    }
+    .img_section img{
+        border-radius: 10px;
+        width: 200px
+        
+    }
+
+
+}
+
+
+
